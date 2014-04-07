@@ -2,7 +2,6 @@ SITE
   remote: http://community.opscode.com/api/v1
   specs:
     apt (2.3.8)
-    build-essential (2.0.0)
     chef_handler (1.1.5)
     dmg (2.2.0)
     git (4.0.0)
@@ -25,6 +24,13 @@ SITE
     yum (3.1.6)
     yum-epel (0.3.4)
       yum (~> 3.0)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/build-essential
+  ref: v1.4.4
+  sha: c1f1166bcd20ac4b3dbda518a794936ac4401d7f
+  specs:
+    build-essential (1.4.4)
 
 DEPENDENCIES
   apt (>= 0)

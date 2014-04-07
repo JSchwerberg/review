@@ -13,7 +13,8 @@ site 'http://community.opscode.com/api/v1'
 
 
 cookbook 'apt'
-cookbook 'build-essential'
+cookbook 'build-essential',
+  :git => 'https://github.com/opscode-cookbooks/build-essential',
   :ref => 'v1.4.4'
 cookbook 'git'
 cookbook 'vim'
