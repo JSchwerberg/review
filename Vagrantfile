@@ -93,6 +93,23 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   #   chef.json = { :mysql_password => "foo" }
   # end
 
+  config.vm.provision :chef_solo do |chef|
+
+    chef.json = {
+        python: {
+            install_method: 'source',
+            version: '3.3.5',
+            checksum: '803a75927f8f241ca78633890c798021'
+        },
+    }
+
+    chef.cookbooks_path = "cookbooks"
+    chef.add_recipe "apt"
+    chef.add_recipe "build-essential"
+    chef.add_recipe "git"
+    chef.add_recipe "openssl"
+    chef.add_recipe "python"    
+  end
   # Enable provisioning with chef server, specifying the chef server URL,
   # and the path to the validation key (relative to this Vagrantfile).
   #
@@ -115,4 +132,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # chef-validator, unless you changed the configuration.
   #
   #   chef.validation_client_name = "ORGNAME-validator"
+
+  
+
 end
