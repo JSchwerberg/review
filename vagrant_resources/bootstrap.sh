@@ -52,15 +52,15 @@ echo "done!"
 # start up django
 #==================================================================
 echo -n "Starting up screen for Django test server..."
-screen -S runserver -d -m
+su - vagrant -c "screen -S runserver -d -m"
 echo "done!"
 
 echo -n "Changing screen directory to project root..."
-screen -r runserver -X stuff $'cd /vagrant/review\n'
+su - vagrant -c "screen -r runserver -p 0 -X stuff $'cd /vagrant/review\n'"
 echo "done!"
 
 echo -n "Loading Django on port 8000 (forwarded to 8001 on host machine)"
-screen -r runserver -X stuff $'python manage.py runserver 0.0.0.0:8000 --settings=review.settings.local\n'
+su - vagrant -c "screen -r runserver -p 0 -X stuff $'python manage.py runserver 0.0.0.0:8000 --settings=review.settings.local\n'"
 echo "done!"
 
 #==================================================================
