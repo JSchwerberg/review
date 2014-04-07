@@ -22,3 +22,4 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 cd /vagrant
+source /vagrant/workenv/bin/activate

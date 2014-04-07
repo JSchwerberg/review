@@ -22,7 +22,7 @@ fi
 
 if [ -f "/home/vagrant/.profile" ]; then
     echo -n "removing .profile for user vagrant..."
-    rm /home/vagrant/.bash_profile
+    rm /home/vagrant/.profile
     echo "done!"
 fi
 
@@ -44,7 +44,7 @@ source /vagrant/workenv/bin/activate
 echo "done!"
 
 echo -n "installing project dependencies via pip..."
-/usr/bin/yes | pip install -r /vagrant/requirements/dev.txt
+/usr/bin/yes | pip install -r /vagrant/requirements/local.txt
 echo "done!"
 
 #==================================================================
