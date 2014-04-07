@@ -44,3 +44,6 @@ Desktop.ini
 
 # Vagrant
 .vagrant
+
+# Librarian
+.librarian
